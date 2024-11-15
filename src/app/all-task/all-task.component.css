@@ -1,0 +1,37 @@
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    width: 100%;
+}
+
+td{
+    cursor: pointer;
+}
+
+th {
+    padding: 5px 10px;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-task-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .add-task-button:hover {
+    background-color: #45a049;
+  }
+  
+

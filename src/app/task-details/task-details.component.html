@@ -1,0 +1,21 @@
+<div *ngIf="taskDetails">
+    <h2>Task Details</h2>
+    <p><strong>Title:</strong> {{ taskDetails.title }}</p>
+    <p><strong>Description:</strong> {{ taskDetails.description }}</p>
+    <p><strong>Current Status:</strong> {{ taskDetails.priority }}</p>
+  
+    <label for="status">Change Status:</label>
+    <select id="status" (change)="changeStatus($event)">
+      <option value="pending" [selected]="taskDetails.priority === 'pending'">Pending</option>
+      <option value="in progress" [selected]="taskDetails.priority === 'in progress'">In Progress</option>
+      <option value="completed" [selected]="taskDetails.priority === 'completed'">Completed</option>
+    </select>
+  
+    <br><br>
+  
+     <nav>
+        <button (click)="deleteTaskAndGoBack()" class="smlbtn">Delete Task</button>
+        <button routerLink="/view-all" class="smlbtn">Go back </button>
+     </nav>
+  </div>
+  

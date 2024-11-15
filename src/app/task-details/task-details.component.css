@@ -1,0 +1,8 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+
+}
+.smlbtn{
+    margin-left: 5px;
+}

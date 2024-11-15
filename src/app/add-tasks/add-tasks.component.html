@@ -1,0 +1,23 @@
+<div>
+    <form (ngSubmit)="onSubmit()" #myform="ngForm">
+        <h1>TASK</h1>
+            <input type="text" placeholder="type the subject" ngModel name="title" required>
+            <br>
+
+            <label>Description</label>
+            <br>
+            <textarea name="description" ngModel id="textarea" required></textarea>
+            <br>
+        <select name="priority" ngModel id="dropdown" required>
+            <option value="pending" selected >Pending</option>
+            <option value="in progress">In Progress</option>
+            <option value="completed">Completed</option>
+        </select>
+
+        <nav>
+            <input type="submit" value="Add Task" class="input-submit">
+            <button routerLink="/view-all">View All Tasks</button>
+
+        </nav>            
+    </form>
+</div>

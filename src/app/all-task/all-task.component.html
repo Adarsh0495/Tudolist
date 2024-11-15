@@ -1,0 +1,33 @@
+<div>
+    <select name="selectstatus" (change)="priorityChange($event)">
+      <option value="all">All</option>
+      <option value="pending">Pending</option>
+      <option value="in progress">In Progress</option>
+      <option value="completed">Completed</option>
+    </select>
+    <button routerLink="/add-task" class="add-task-button">Add New Task</button>
+  </div>
+  
+  <div class="main">
+    <table>
+      <tr>
+        <th>SiNo</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+      <tr *ngFor="let item of filteredTasks" (click)="viewTask(item.id)">
+        <td>{{ item.id }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+          <td>
+            <select (change)="changeStatus(item.id, $event)">
+              <option value="pending" [selected]="item.priority === 'pending'">Pending</option>
+              <option value="in progress" [selected]="item.priority === 'in progress'">In Progress</option>
+              <option value="completed" [selected]="item.priority === 'completed'">Completed</option>
+            </select>
+          </td>
+      </tr>
+    </table>
+  </div>
+  
